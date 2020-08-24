@@ -14,6 +14,7 @@ Necessario:
 + Mysql
 
 Recomenda-se a instalação do Laravel também devido a execução de scripts de DB pelo artisan.
+Depois é só aplicar um `composer install`
 
 ## Execução e Funcionamento
 
