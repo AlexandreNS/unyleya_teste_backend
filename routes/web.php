@@ -56,7 +56,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     });
     //Livros
     $router->group(['prefix' => 'livros'], function () use ($router) {
-        $router->get('/count',  ['uses' => 'LivroController@countLivroByOneFilter']);
+        $router->post('/count',  ['uses' => 'LivroController@countLivroByOneFilter']);
 
         $router->get('/',  ['uses' => 'LivroController@showAllLivros']);
     

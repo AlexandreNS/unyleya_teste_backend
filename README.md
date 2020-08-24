@@ -1,24 +1,61 @@
-# Lumen PHP Framework
+# Teste Unyleya - Backend
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+Aqui consta detalhes e instruções de execução da API do sistema de estoques de uma biblioteca.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Pré Requisitos
+Feito em Lumen 7.x utiliza como base Laravel ^7.0.
+Necessario:
 
-## Official Documentation
++ PHP >= 7.2
+    + Extensão OpenSSL PHP
+    + Extensão PDO PHP
+    + Extensão PHP Mbstring
++ Mysql
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+Recomenda-se a instalação do Laravel também devido a execução de scripts de DB pelo artisan.
 
-## Contributing
+## Execução e Funcionamento
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Para executar o projeto:
 
-## Security Vulnerabilities
+```bash
+php -S localhost:8000 -t public
+```
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Para criar o Banco de Dados e popular ele:
 
-## License
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Endpoints Api
+
++ /api
+    + get /nacionalidades/ | Listar Todos
+    + get /nacionalidades/{id} | Pegar pelo Id
+    + /generos
+        + get / | Listar Todos
+        + get /{id} | Pegar pelo Id
+        + post / | Salvar
+        + delete /{id} | Apagar pelo Id
+        + put /{id} | Alterar registro
+    + /editoras
+        + get / | Listar Todos
+        + get /{id} | Pegar pelo Id
+        + post / | Salvar
+        + delete /{id} | Apagar pelo Id
+        + put /{id} | Alterar registro
+    + /autores
+        + get / | Listar Todos
+        + get /{id} | Pegar pelo Id
+        + post / | Salvar
+        + delete /{id} | Apagar pelo Id
+        + put /{id} | Alterar registro
+    + /livros
+        + post /count | Listar todos por um filtro especifico
+        + get / | Listar Todos
+        + get /{id} | Pegar pelo Id
+        + post / | Salvar
+        + delete /{id} | Apagar pelo Id
+        + put /{id} | Alterar registro

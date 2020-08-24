@@ -22,7 +22,14 @@ class Livros extends Model
 
     public function autor()
     {
-        return $this->belongsTo(Autores::class);
+        return $this->hasOneThrough(
+            Autores::class, 
+            Nacionalidade::class, 
+            'id',
+            'nacionalidade_id',
+            'autor_id',
+            'id',
+        );
     }
 
     public function editora()

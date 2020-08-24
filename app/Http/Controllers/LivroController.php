@@ -23,20 +23,19 @@ class LivroController extends Controller
         ]);
 
         $count = false;
-
         if ($request->has('genero_id')) {
             $count = Livros::where('genero_id', $request->input('genero_id') )->count();
         }
 
         if ($request->has('editora_id')) {
-            $count = Livros::where('genero_id', $request->input('genero_id') )->count();
+            $count = Livros::where('editora_id', $request->input('editora_id') )->count();
         }
 
         if ($request->has('autor_id')) {
-            $count = Livros::where('genero_id', $request->input('genero_id') )->count();
+            $count = Livros::where('autor_id', $request->input('autor_id') )->count();
         }
 
-        return response()->json(['count', $count]);
+        return response()->json(['count' => $count]);
     }
 
     public function showOneLivro($id)
