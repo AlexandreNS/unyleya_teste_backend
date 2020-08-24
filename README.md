@@ -10,6 +10,7 @@ Necessario:
     + Extensão OpenSSL PHP
     + Extensão PDO PHP
     + Extensão PHP Mbstring
++ Composer
 + Mysql
 
 Recomenda-se a instalação do Laravel também devido a execução de scripts de DB pelo artisan.
